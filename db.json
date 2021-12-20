@@ -1,0 +1,76 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "Restaurent": [
+    {
+      "id": 1,
+      "name": "JW-mareid",
+      "email": "jw@gmail.com",
+      "mobile": 934624222,
+      "address": "pune 20",
+      "service": "Coffee"
+    },
+    {
+      "id": 2,
+      "name": "Samudra",
+      "email": "samudra@gmail.com",
+      "mobile": 972228422,
+      "address": "karve nagar pune",
+      "service": "Chicken biryani"
+    },
+    {
+      "id": 3,
+      "name": "kiren",
+      "email": "kiren@gmail.com",
+      "mobile": 35633254,
+      "address": "mumbai",
+      "service": "Special Veg panner"
+    },
+    {
+      "id": 4,
+      "name": "burgerking",
+      "email": "burgerking@gmail.com",
+      "mobile": 8425548433,
+      "address": "pune",
+      "service": "burger"
+    }
+  ],
+  "User": [
+    {
+      "name": "aniket",
+      "email": "aniket@gmail.com",
+      "mobile": "7028333785",
+      "password": "1234",
+      "id": 1
+    },
+    {
+      "name": "sam",
+      "email": "sam@gmail.com",
+      "mobile": "934722962",
+      "password": "123",
+      "id": 2
+    },
+    {
+      "name": "kiren",
+      "email": "k@gmail.com",
+      "mobile": "67889976",
+      "password": "123",
+      "id": 3
+    }
+  ]
+}

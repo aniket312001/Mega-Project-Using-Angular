@@ -1,0 +1,103 @@
+<nav class="navbar navbar-light bg-primary">
+
+    <div class="container-fluid">
+        <h2>Restaurent Record App</h2>
+        <div class="d-flex">
+            <div (click)="showAddButton()" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Restaurent</div>
+            <button class="btn btn-danger mx-3" routerLink="/login">Logout</button>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Jumbotron -->
+<div class="jumbotron">
+    <h1 class="display-4">Restaurant Records Management</h1>
+    <p class="lead">You Can save Restaurant here</p>
+    
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </p>
+  </div>
+
+
+<!-- table Display here -->
+<table class="table mt-4">
+    <thead>
+        <tr>
+            <th scope="col">Restaurant ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Address</th>
+            <th scope="col">Service</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of allData">
+            <td>{{data.id}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.mobile}}</td>
+            <td>{{data.address}}</td>
+            <td>{{data.service}}</td>
+            
+            <td>
+                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onEditResto(data)">Edit</button>&nbsp;
+                <button class="btn btn-danger" (click)="deleteResto(data.id)" >Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+            <form [formGroup]="formValue" >
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" formControlName="name"   aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="exampleInputPassword1" formControlName="email">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Mobile</label>
+                  <input type="number" class="form-control" id="exampleInputPassword1" formControlName="mobile">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Address</label>
+                  <input type="text" class="form-control" id="exampleInputPassword1" formControlName="address">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Service</label>
+                  <input type="text" class="form-control" id="exampleInputPassword1" formControlName="service">
+                </div>
+                
+              </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button *ngIf="showAdd" class="btn btn-primary" (click)="addResturent()" data-bs-dismiss="modal">Add Detail</button>
+          <button *ngIf="showbtn"  type="button" class="btn btn-primary" (click)="updateResto()" data-bs-dismiss="modal">Update Detail</button>
+        </div>
+      </div>
+    </div>
+  </div>
